@@ -10,12 +10,24 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let romanNumeral = '';
+
+    // Iterate through the symbols array
+    for (let [symbol, value] of obj) {
+        // Repeat adding the current symbol until the value is greater than or equal to the current symbol's value
+        while (num >= value) {
+            romanNumeral += symbol;
+            num -= value;
+        }
+    }
+
+    return romanNumeral;
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 // console.log(convertToRoman(36));
-
+// console.log(convertToRoman(14))
 
 
 
